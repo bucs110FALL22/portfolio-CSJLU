@@ -10,8 +10,8 @@ Welcome to CS 110. I look forward to working with you this semester. This is you
 
 ## Student Info - MUST BE COMPLETED
 
-Preferred Name:
+Preferred Name: Johnny
 
-Discord username:
+Discord username: Johnny Lu (server) or courage#2368 (entirety of discord)
 
-REPL url:
+REPL url: https://replit.com/@JohnnyLu1
