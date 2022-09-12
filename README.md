@@ -14,4 +14,4 @@ Preferred Name: Johnny
 
 Discord username: Johnny Lu (server) or courage#2368 (entirety of discord)
 
-REPL url: https://replit.com/@JohnnyLu1
+REPL url: https://replit.com/join/xxddcriugo-johnnylu1
