@@ -130,6 +130,7 @@ pygame.time.wait(500)
 window.fill(color)
 pygame.display.flip()
 
+#test (don't mind this comment)
 
 
 
