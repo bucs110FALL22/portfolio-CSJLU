@@ -17,5 +17,6 @@ dictionaries = {
 
 for key, value in dictionaries.items():
   article = article.replace(key, value)
-
 print(article)
+
+
