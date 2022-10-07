@@ -19,10 +19,6 @@ red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 225)
 
-
-
-
-
 msg = "Who do you think will win?"
 print(msg)
 surface = pygame.display.set_mode(size=screen)
@@ -63,46 +59,47 @@ pygame.draw.line(surface, white, (100, 0), (100, 200))
 pygame.display.flip()
 
 
-player_one = True
-player_two = False
+
 
 red_count = 0
 blue_count = 0
+round_count = 10
+turn = "Red"
 
-if player_one:
-  for i in range(10):
-    pygame.time.wait(1000)
-    rand_x = random.randrange(0, x+1)
-    rand_y = random.randrange(0, y+1)
-    random_center = (rand_x, rand_y)
-    distance_from_center = math.hypot(rand_x-half_x, rand_y-half_y)
-    is_in_circle = distance_from_center <= x/2
-    player_one = False
-    player_two = True
-    if is_in_circle:
-      pygame.draw.circle(surface, green, random_center, 4)
-      red_count += 1
-    else:
-      pygame.draw.circle(surface, red, random_center, 4)
+def throw():
+  pygame.time.wait(1000)
+  rand_x = random.randrange(0, x+1)
+  rand_y = random.randrange(0, y+1)
+  random_center = (rand_x, rand_y)
+  distance_from_center = math.hypot(rand_x-half_x, rand_y-half_y)
+  is_in_circle = distance_from_center <= x/2
+  if is_in_circle:
+    pygame.draw.circle(surface, green, random_center, 4)
     pygame.display.flip()
-
-if player_two:
-  for i in range(10):
-    pygame.time.wait(1000)
-    rand_x = random.randrange(0, x+1)
-    rand_y = random.randrange(0, y+1)
-    random_center = (rand_x, rand_y)
-    distance_from_center = math.hypot(rand_x-half_x, rand_y-half_y)
-    is_in_circle = distance_from_center <= x/2
-    player_one = True
-    player_two = False
-    if is_in_circle:
-      pygame.draw.circle(surface, green, random_center, 4)
-      blue_count += 1 
-    else:
-      pygame.draw.circle(surface, red, random_center, 4)
+    return True
+  else:
+    pygame.draw.circle(surface, red, random_center, 4)
     pygame.display.flip()
+    return False
 
+for i in range(2 * round_count):
+  hit = throw()
+  if (turn=="Red" and hit):
+    print("Red hits, +1")  
+    red_count += 1
+  elif (turn=="Blue" and hit):
+    print("Blue hits, +1")
+    blue_count += 1
+  else:
+    if (turn=="Red"):
+      print("Red missed")
+    else:
+      print("Blue missed")
+
+  if (turn=="Red"):
+    turn = "Blue"
+  else:
+    turn = "Red"
 
 if red_count > blue_count:
   print("Red wins, " + str(red_count))
@@ -120,7 +117,7 @@ elif blue_count > red_count:
     print("You guessed wrong!")
 else:
   print("You tied!")
-  print("The score was, " + str(red_count))
+  print("The score was" ,str(red_count))
   print("You guessed wrong!")
 
-  
+
