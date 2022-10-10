@@ -1,33 +1,32 @@
 import turtle
 import random 
 
-x=500
-y=500
+#x=500
+#y=500
 myturtle = turtle.Turtle()
-window = turtle.Screen()
-turtle.screensize(x, y)
-begin_x = x/2
-begin_y = y/2
-
-turtle.penup()
-turtle.setposition(begin_x, begin_y)
+wn = turtle.Screen()
+#turtle.screensize(x, y)
+distance = 10
+angle = 90
+is_in_screen = True
 
 
-
-while True:
+while is_in_screen:
   flip_coin = random.randrange(0, 2)
   if(flip_coin == 0):
-      myturtle.left(90)
-      turtle.forward(50)
-  elif(flip_coin == 1):
-      myturtle.right(90)
-      myturtle.forward(50)
+      myturtle.left(angle)
+  else:
+      myturtle.right(angle) 
+  myturtle.forward(distance)
 
+  turtle_x = myturtle.xcor()
+  turtle_y = myturtle.ycor()
 
-
-    
+  x_range = wn.window_width()/2
+  y_range = wn.window_height()/2
       
+  if abs(turtle_x) > x_range or abs(turtle_y) > y_range:
+    is_in_screen = False
 
-
-window.exitonclick()
+wn.exitonclick()
 
