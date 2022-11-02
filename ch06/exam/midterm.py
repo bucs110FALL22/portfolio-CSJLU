@@ -19,6 +19,7 @@ def askUser():
       
 answer = askUser()
 
+  
 def askUserShape():
   notAnswered = True
   while notAnswered:
@@ -37,7 +38,7 @@ def askUserShape():
       return 10
     else: 
       print("You did not choose between 5 and 10. Try again.")
-
+      
 shapeAnswer = askUserShape()
 
 
