@@ -1,4 +1,12 @@
 [[package]]
+name = "numpy"
+version = "1.23.4"
+description = "NumPy is the fundamental package for array computing with Python."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "pygame"
 version = "2.1.2"
 description = "Python Game Development"
@@ -6,10 +14,23 @@ category = "main"
 optional = false
 python-versions = ">=3.6"
 
+[[package]]
+name = "rectangle"
+version = "0.4"
+description = "A class for handling rectangle regions."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+numpy = ">=1.13"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ceabba9b684e4f2ab71d2d4da4968eba8c229599e1fa639f3b9b53711f3f4243"
+content-hash = "6121b3b38b95dacda407eea8d1103452b17e0336fecd290d5f441be5a0d4f163"
 
 [metadata.files]
+numpy = []
 pygame = []
+rectangle = []
