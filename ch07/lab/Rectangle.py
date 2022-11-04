@@ -12,16 +12,19 @@ class Rectangle:
     self.y = y
     self.height = height
     self.width = width
-    
-    
-  def __str__(self):
     '''
-    Organize specific values of the rectangle 
+    Four rectangle variables are generated and defined
     
     x(int): the x coordinate of the rectangles upper left position
     y(int): the y coordinate of the rectangles upper left position
     height(int): the height of the rectangle
     width(int): the width of the rectangle
+ 
+    '''
+    
+  def __str__(self):
+    '''
+    Organize specific values of the rectangle 
 
     return(int): x, y, width, and height of the rectangle in a specific format
     '''
